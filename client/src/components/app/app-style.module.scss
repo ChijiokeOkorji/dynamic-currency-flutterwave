@@ -1,0 +1,10 @@
+@use '../../global-styles/layout';
+
+.child {
+  @include layout.grid-responsive-child;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

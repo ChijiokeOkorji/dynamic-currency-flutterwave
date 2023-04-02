@@ -1,0 +1,35 @@
+@use 'variables' as v;
+@use 'sass:color';
+
+@mixin z0-elevation {
+  border: 0.0625rem solid v.$border-stroke;
+  box-shadow: none;
+}
+@mixin z1-elevation {
+  box-shadow: 0 0.0625rem 0.1875rem #0000001f, 0 0.0625rem 0.0625rem #00000024, 0 0.125rem 0.0625rem #00000033;
+  border-color: #ffffff00;
+}
+@mixin z2-elevation {
+  box-shadow: 0 0.0625rem 0.3125rem #0000001f, 0 0.125rem 0.125rem #00000024, 0 0.1875rem 0.0625rem #00000033;
+  border-color: #ffffff00;
+}
+@mixin z4-elevation {
+  box-shadow: 0 0.0625rem 0.625rem #0000001f, 0 0.25rem 0.3125rem #00000024, 0 0.125rem 0.25rem #00000033;
+  border-color: #ffffff00;
+}
+@mixin z5-elevation {
+  box-shadow: 0 0.0625rem 0.875rem #0000001f, 0 0.3125rem 0.5rem #00000024, 0 0.1875rem 0.3125rem #00000033;
+  border-color: #ffffff00;
+}
+@mixin z8-elevation {
+  box-shadow: 0 0.1875rem 0.875rem #0000001f, 0 0.5rem 0.625rem #00000024, 0 0.3125rem 0.3125rem #00000033;
+  border-color: #ffffff00;
+}
+
+@mixin state-overlay($color, $color-mono, $percentage) {
+  @if ($color-mono == #fff) {
+    background-color: color.mix($color, $color-mono, $percentage);
+  } @else {
+    background-color: color.mix($color, $color-mono, ((2 * $percentage) - 100%));
+  }
+}

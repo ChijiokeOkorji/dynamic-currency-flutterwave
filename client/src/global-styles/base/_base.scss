@@ -1,0 +1,51 @@
+@use '../abstracts' as a;
+@use '../layout/' as l;
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  position: relative;
+  box-sizing: inherit;
+}
+
+body {
+  @include a.body2-font;
+  color: a.color-emphasis(#000000);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+#root {
+  @include l.grid-parent();
+  font-family: a.$sans-serif-font-family;
+}

@@ -1,0 +1,73 @@
+@use '../../global-styles/abstracts';
+
+$background-color: #ffffff;
+
+.menu {
+  @include abstracts.z0-elevation;
+  height: 3rem;
+  margin: {
+    top: 0;
+    right: auto;
+    bottom: 2rem;
+    left: auto;
+  };
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  z-index: 1;
+  cursor: pointer;
+
+  &.focus {
+    border: 0.125rem solid abstracts.$main-color;
+  }
+
+  .div {
+    @include abstracts.body1-font;
+    padding-left: 1rem;
+    background-color: transparent;
+    outline: none;
+  }
+
+  .icon {
+    margin: 0 0.625rem 0 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color;
+    color: abstracts.$main-color;
+    border-radius: 0.125rem;
+    z-index: -1;
+  }
+
+  .dropdown {
+    @include abstracts.z4-elevation;
+    width: 100%;
+    max-height: 50vh;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: $background-color;
+    border-radius: 0.5rem;
+    transform: translate(0, calc(100% + 0.25rem));
+    overflow-y: hidden;
+
+    .entriesArea {
+      flex-grow: 1;
+      overflow-y: scroll;
+    }
+
+    .entry {
+      padding: 1rem;
+      border-bottom: 0.0625rem solid abstracts.$border-stroke;
+      cursor: pointer;
+
+      &:hover {
+        @include abstracts.state-overlay(#ffffff00, abstracts.$main-color, 96%);
+      }
+    }
+  }
+}

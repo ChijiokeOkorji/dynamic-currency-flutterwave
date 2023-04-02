@@ -1,0 +1,31 @@
+@use '../../global-styles/abstracts';
+
+.card {
+  @include abstracts.z1-elevation;
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  .image {
+    @include abstracts.body1-font;
+    height: 9rem;
+    background-color: abstracts.$image-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bodyArea {
+    margin: 0.5rem 1rem;
+
+    .title {
+      @include abstracts.h6-font;
+    }
+
+    .price {
+      @include abstracts.subtitle1-font;
+    }
+  }
+}
